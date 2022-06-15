@@ -61,12 +61,12 @@ def DetectandPredict(frame, faceNet, maskNet):
 	return (locs, preds)
 
 # load our pre trained face detector model gathered from the internet
-prototxtPath = r"C:\Users\karee\Desktop\python projects\Mask detect\deploy_prototxt.py"																		
-weightsPath = r"C:\Users\karee\Desktop\python projects\Mask detect\res10_300x300_ssd_iter_140000.caffemodel"
+prototxtPath = r"deploy_prototxt.py"																		
+weightsPath = r"res10_300x300_ssd_iter_140000.caffemodel"
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
-maskNet = tf.keras.models.load_model(r"C:\Users\karee\Desktop\python projects\Mask detect\mask_detector.model")
-	
+maskNet = tf.keras.models.load_model(r"mask_detector.model")
+
 vs = VideoStream(src=0).start()
 
 # loop over the frames from the video stream
